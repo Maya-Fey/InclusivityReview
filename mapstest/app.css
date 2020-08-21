@@ -6,7 +6,12 @@ body {
 	height: 100%;
 }
 
+#mapcontainer {
+	height: 100%;
+	padding: 7em;
+	box-sizing: border-box;
+}
+
 #map {
 	height: 100%;
-	padding: 10em;
 }
