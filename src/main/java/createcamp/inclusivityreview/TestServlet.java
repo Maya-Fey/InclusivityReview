@@ -16,6 +16,7 @@ public class TestServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	{
+		resp.setHeader("Access-Control-Allow-Origin", "*");
 		//req.getParameter("myparam")
 		JSONObject obj = new JSONObject();
 		try(PrintWriter writer = resp.getWriter()) {
