@@ -20,3 +20,29 @@ userexample = {
 		"trans", "female", "queer"
 	];
 };
+
+function placeExists(placeID)
+{
+	//TODO: Put things here
+	return false;
+}
+
+function addPlace(place)
+{
+	//Write to place
+}
+
+function getReviewsByPlace(placeId)
+{
+	//TODO: do read
+	return [
+		reviewexample,
+		reviewexample,
+		reviewexample
+	];
+}
+
+function getUserByUsername(username)
+{
+	return userexample;
+}
