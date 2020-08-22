@@ -1,22 +1,33 @@
 let map;
-let places_API = "AIzaSyDa7-5gJY3YYxgPWY7YtSCyKOBucVJpEbw";
+let places;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -41.291257, lng: 174.776879 },
     zoom: 16
   });
+  places = new google.maps.places.PlacesService(map);
   map.addListener("click", onClick);
 }
 
 function onClick(event) {
 	if(event.placeId != undefined) {
-		onPlaceSelected(event.latLng, event.placeId);
+		doPlaceReq(event.latLng, event.placeId);
 	}
 }
 
-function onPlaceSelected(lonLat, placeID)
+function doPlaceReq(lonLat, placeID)
 {
-	alert("Selected " + placeID);
+	req = { "placeId": placeID };
+	places.getDetails(req, function(place, status) { 
+		if(status == google.maps.places.PlacesServiceStatus.OK) {
+			onPlaceSelected(lonLat, place);
+		}
+	});
+}
+
+function onPlaceSelected(lonLat, place)
+{
+	alert(place.name);
 }
 
