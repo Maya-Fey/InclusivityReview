@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 
-public class TestServlet extends HttpServlet {
+public class ServletUser extends HttpServlet {
 	
 	private static final long serialVersionUID = -5595471112661348949L;
 
@@ -22,18 +22,18 @@ public class TestServlet extends HttpServlet {
 		
 		//get java object storing data required
 		
-		String reqPlaceID = req.getParameter("placeID");
+		String reqUserID = req.getParameter("userID");
 		
 		//Place place = new Place("1111", "Home", 0.82, 90.2);
 		
 		
+		User result = new Data().users.get(reqUserID);
 		
-		boolean exist = false;
   
 
 		//add Java object data into json
 		JSONObject obj = new JSONObject();
-		obj.put("exist", exist);
+		obj.put("exist", result.username);
 		/*
 		obj.put("placeID", place.placeID);
 		obj.put("name", place.name);

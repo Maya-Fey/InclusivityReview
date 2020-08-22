@@ -8,17 +8,39 @@
         <servlet-name>ServTest</servlet-name>
         <servlet-class>createcamp.inclusivityreview.TestServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ServPlaceExist</servlet-name>
-        <servlet-class>createcamp.inclusivityreview.TestServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>ServTest</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ServPlaceExist</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletPlaceExist</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServPlaceExist</servlet-name>
         <url-pattern>/exist</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ServPlaceReview</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletPlaceReview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServPlaceReview</servlet-name>
+        <url-pattern>/review</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ServUser</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServUser</servlet-name>
+        <url-pattern>/user</url-pattern>
     </servlet-mapping>
 
 </web-app>

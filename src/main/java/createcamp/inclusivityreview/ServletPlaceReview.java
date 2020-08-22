@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
 
-public class TestServlet extends HttpServlet {
+public class ServletPlaceReview extends HttpServlet {
 	
 	private static final long serialVersionUID = -5595471112661348949L;
 
