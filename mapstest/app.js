@@ -6,5 +6,10 @@ function initMap() {
     center: { lat: -41.291257, lng: 174.776879 },
     zoom: 16
   });
+  map.addListener("click", onClick);
+}
+
+function onClick(event) {
+	alert("The user has made a click.");
 }
 
