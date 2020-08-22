@@ -92,20 +92,25 @@ function doSearch()
 	showNearby(searchtext.value);
 }
 
-function newReview()
+function newReview(review)
 {
 	let rev = document.createElement("div");
 	rev.setAttribute("class", "review");
 	let title = document.createElement("h4");
 	title.setAttribute("class", "reviewtitle");
+	title.innerHTML = "Review by " + review.username;
 	let safety = document.createElement("span");
 	safety.setAttribute("class", "score");
+	safety.innerHTML = "Safety: " + review.safety;
 	let inclusivity = document.createElement("span");
 	inclusivity.setAttribute("class", "score");
+	inclusivity.innerHTML = "Inclusivity: " + review.inclusivity;
 	let enjoyability = document.createElement("span");
 	enjoyability.setAttribute("class", "score");
+	enjoyability.innerHTML = "Enjoyability: " + review.enjoyability;
 	let text = document.createElement("p");
 	text.setAttribute("class", "reviewtext");
+	text.innerHTML = review.reviewtext;
 	rev.appendChild(title);
 	rev.appendChild(safety);
 	rev.appendChild(inclusivity);
