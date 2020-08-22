@@ -91,3 +91,25 @@ function doSearch()
 {
 	showNearby(searchtext.value);
 }
+
+function newReview()
+{
+	let rev = document.createElement("div");
+	rev.setAttribute("class", "review");
+	let title = document.createElement("h4");
+	title.setAttribute("class", "reviewtitle");
+	let safety = document.createElement("span");
+	safety.setAttribute("class", "score");
+	let inclusivity = document.createElement("span");
+	inclusivity.setAttribute("class", "score");
+	let enjoyability = document.createElement("span");
+	enjoyability.setAttribute("class", "score");
+	let text = document.createElement("p");
+	text.setAttribute("class", "reviewtext");
+	rev.appendChild(title);
+	rev.appendChild(safety);
+	rev.appendChild(inclusivity);
+	rev.appendChild(enjoyability);
+	rev.appendChild(text);
+	document.getElementById("leftinner").appendChild(rev);
+}

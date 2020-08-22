@@ -25,7 +25,7 @@ userexample = {
 function placeExists(placeID)
 {
 	//TODO: Put things here
-	return { exists: false};
+	return { exist: false};
 }
 
 function addPlace(place)
