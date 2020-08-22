@@ -8,9 +8,17 @@
         <servlet-name>ServTest</servlet-name>
         <servlet-class>createcamp.inclusivityreview.TestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServPlaceExist</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.TestServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServTest</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServPlaceExist</servlet-name>
+        <url-pattern>/exist</url-pattern>
     </servlet-mapping>
 
 </web-app>
