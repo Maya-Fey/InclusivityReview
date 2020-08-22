@@ -40,7 +40,9 @@ function onPlaceSelected(lonLat, place)
 	document.getElementById("leftinner").setAttribute("style", "");
 	document.getElementById("leftmore").setAttribute("style", "");
 	document.getElementById("placetitle").innerHTML = place.name;
-	newReview(reviewexample)
+	reviews = getReviewsByPlace(place.place_id);
+	for(let i = 0; i < reviews.length && i < 2; i++)
+		newReview(reviews[i]);
 }
 
 function centerOnLocation()
