@@ -45,3 +45,36 @@ function centerOnLocation()
 		});
 	}
 }
+
+function placesQueryFromStr(str)
+{
+	return {
+		name: str,
+		radius: '1000', 
+		location: map.getCenter()
+	};
+}
+
+markers = [];
+function showNearby(str)
+{
+	places.nearbySearch(placesQueryFromStr(str), function(e) { 
+		markers.forEach(function(marker) {
+			marker.visible = false;
+		});
+		markers = [];
+		e.forEach(function(place) {
+			markers.push(new google.maps.Marker({
+				position: { lat: place.geometry.location.lat(), lng: place.geometry.location.lng() }, 
+				label: place.name,
+				placeId: place.place_id,
+				map: map
+			}));
+		});
+		markers.forEach(function(marker) {
+			marker.addListener("click", function(loc) {
+				doPlaceReq(marker.position, marker.placeId);
+			});
+		});
+	});
+}
