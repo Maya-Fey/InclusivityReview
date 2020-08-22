@@ -16,9 +16,9 @@ placeexample = {
 userexample = {
 	username: "claire",
 	fullname: "Claire Chambers",
-	tags = [
+	tags: [
 		"trans", "female", "queer"
-	];
+	]
 };
 
 function placeExists(placeID)
@@ -45,4 +45,11 @@ function getReviewsByPlace(placeId)
 function getUserByUsername(username)
 {
 	return userexample;
+}
+
+async function getFromServer(url) {
+    try {
+    const res = await (await fetch(url)).json();
+    return res;
+  } catch(e) { console.log(e); }
 }
