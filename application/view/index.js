@@ -36,7 +36,11 @@ function doPlaceReq(lonLat, placeID)
 
 function onPlaceSelected(lonLat, place)
 {
-	alert(place.name);
+	console.log(place);
+	document.getElementById("leftinner").setAttribute("style", "");
+	document.getElementById("leftmore").setAttribute("style", "");
+	document.getElementById("placetitle").innerHTML = place.name;
+	newReview(reviewexample)
 }
 
 function centerOnLocation()
