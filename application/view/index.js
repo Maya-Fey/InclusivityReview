@@ -8,6 +8,14 @@ function initMap() {
 	});
 	places = new google.maps.places.PlacesService(map);
 	map.addListener("click", onClick);
+	
+	searchtext = document.getElementById("searchtext");
+
+	searchtext.addEventListener('keyup', function onEvent(e) {
+		if(e.keyCode === 13) {
+			doSearch()
+		}
+	});
 }
 
 function onClick(event) {
@@ -77,4 +85,9 @@ function showNearby(str)
 			});
 		});
 	});
+}
+
+function doSearch()
+{
+	showNearby(searchtext.value);
 }
