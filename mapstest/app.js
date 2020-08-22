@@ -10,6 +10,13 @@ function initMap() {
 }
 
 function onClick(event) {
-	alert("The user has made a click.");
+	if(event.placeId != undefined) {
+		onPlaceSelected(event.latLng, event.placeId);
+	}
+}
+
+function onPlaceSelected(lonLat, placeID)
+{
+	alert("Selected " + placeID);
 }
 
