@@ -10,7 +10,7 @@ placeexample = {
 	placeID: "ChIJ90utGdevOG0Rhmjc02ajcJo",
 	name: "Ivy Bar & Cabaret",
 	lat: -41.29098399999999,
-	lng: 174.7771863,
+	lng: 174.7771863
 }
 
 userexample = {
