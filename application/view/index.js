@@ -2,12 +2,12 @@ let map;
 let places;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -41.291257, lng: 174.776879 },
-    zoom: 16
-  });
-  places = new google.maps.places.PlacesService(map);
-  map.addListener("click", onClick);
+	map = new google.maps.Map(document.getElementById("map"), {
+		center: { lat: -41.291257, lng: 174.776879 },
+		zoom: 16
+	});
+	places = new google.maps.places.PlacesService(map);
+	map.addListener("click", onClick);
 }
 
 function onClick(event) {
@@ -29,4 +29,19 @@ function doPlaceReq(lonLat, placeID)
 function onPlaceSelected(lonLat, place)
 {
 	alert(place.name);
+}
+
+function centerOnLocation()
+{
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
+			map.setCenter(pos);
+		}, function() {
+			handleLocationError(true, infoWindow, map.getCenter());
+		});
+	}
 }
