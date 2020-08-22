@@ -3,7 +3,8 @@ reviewexample = {
 	placeID: "",
 	safety: 4.0,
 	inclusivity: 4.0,
-	enjoyability: "Repudiandae minima earum rerum ratione molestiae maxime dolorem ut. Tempora quod est quaerat unde corporis nisi. Quidem quibusdam inventore laudantium impedit repellat. Vel libero voluptas accusamus quis dolore ipsum saepe."
+	enjoyability: 4.0,
+	reviewtext: "Repudiandae minima earum rerum ratione molestiae maxime dolorem ut. Tempora quod est quaerat unde corporis nisi. Quidem quibusdam inventore laudantium impedit repellat. Vel libero voluptas accusamus quis dolore ipsum saepe."
 };
 
 placeexample = {
