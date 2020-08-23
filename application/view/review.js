@@ -13,7 +13,8 @@ function initMap() {
 		zoom: 16
 	});
 	places = new google.maps.places.PlacesService(map);
-	document.getElementById("placeLabel").innerHTML = currPlace.name;
+	reviewPlaceReq("ChIJ1S1oBNevOG0RLMhZZpcx46E");
+
 }
 
 function backButtonClick() {
@@ -50,14 +51,29 @@ function findGetParameter(parameterName) {
 	return result;
 }
 
-function doPlaceReq(placeID)
+function reviewPlaceReq(placeID)
 {
 	req = { "placeId": placeID };
 	places.getDetails(req, function(place, status) {
 		if(status == google.maps.places.PlacesServiceStatus.OK) {
 			currPlace = place;
+			document.getElementById("placeLabel").innerHTML = place.name;
+			reviews = getReviewsByPlace(placeID).then(function(vals) {});
+			// FIXME Get actual reviews
+			// showReviewRatings(getAverages(reviews));
+			showReviewRatings({
+				"safety": 5.0,
+				"inclusivity": 2.5,
+				"enjoyability": 2.0 });
 		}
 	});
+}
+
+function showReviewRatings(aveReviews) {
+	for(let i = 0; i < aveReviews["safety"]; i++)
+	{
+	}
+	document.getElementById("inclusivityRating").innerHTML;
 }
 
 // doPlaceReq(findGetParameter(placeID))
