@@ -2,17 +2,7 @@
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-   
-   <servlet>
-        <servlet-name>ServTest</servlet-name>
-        <servlet-class>createcamp.inclusivityreview.TestServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServTest</servlet-name>
-        <url-pattern>/test</url-pattern>
-    </servlet-mapping>
-    
+   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">    
     
     <servlet>
         <servlet-name>ServPlaceExist</servlet-name>
@@ -23,6 +13,14 @@
         <url-pattern>/exist</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ServPlaceAdd</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletPlaceAdd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServPlaceAdd</servlet-name>
+        <url-pattern>/addplace</url-pattern>
+    </servlet-mapping>
     
     <servlet>
         <servlet-name>ServPlaceReview</servlet-name>
