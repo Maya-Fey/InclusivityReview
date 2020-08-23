@@ -40,5 +40,23 @@
         <servlet-name>ServAddReview</servlet-name>
         <url-pattern>/addreview</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServGetUser</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletGetUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServGetUser</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServAddUser</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletAddUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServAddUser</servlet-name>
+        <url-pattern>/adduser</url-pattern>
+    </servlet-mapping>
 
 </web-app>
