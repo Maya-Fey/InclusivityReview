@@ -48,9 +48,17 @@ function addReview(review)
 	}).then(function(res) { res.json(); });
 }
 
-function getUserByUsername(username)
+function getUser(username)
 {
-	return userexample;
+	return getFromServer("http://claire.lgbt:8080/user?username=" + username);
+}
+
+function addUser(user)
+{
+	fetch("http://claire.lgbt:8080/adduser", {
+		method: "POST",
+		body: JSON.stringify(user)
+	}).then(function(res) { res.json(); });
 }
 
 async function getFromServer(url) {
