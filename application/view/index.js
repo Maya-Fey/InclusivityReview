@@ -45,13 +45,24 @@ function onPlaceSelected(lonLat, place)
 	while(reviews.length > 0)
 		document.getElementById("leftinner").removeChild(reviews[0]);
 	getReviewsByPlace(place.place_id).then(function(reviews) {
-		for(let i = 0; i < reviews.length && i < 2; i++)
-		newReview(reviews[i]);
-	
-		let averages = getAverages(reviews);
-		document.getElementById("placesafety").innerHTML = "Safety: " + formatScore(averages.safety);
-		document.getElementById("placeinclusivity").innerHTML = "Inclusivity: " + formatScore(averages.inclusivity);
-		document.getElementById("placeenjoyability").innerHTML = "Enjoyability: " + formatScore(averages.enjoyability);
+		if(reviews.length > 0)
+		{
+			for(let i = 0; i < reviews.length && i < 2; i++)
+				newReview(reviews[i]);
+		
+			let averages = getAverages(reviews);
+			document.getElementById("placesafety").innerHTML = "Safety: " + formatScore(averages.safety);
+			document.getElementById("placeinclusivity").innerHTML = "Inclusivity: " + formatScore(averages.inclusivity);
+			document.getElementById("placeenjoyability").innerHTML = "Enjoyability: " + formatScore(averages.enjoyability);
+			document.getElementById("nonefound").setAttribute("style", "display: none");
+			document.getElementById("leftmore").innerHTML = "See all details and reviews...";
+		} else {
+			document.getElementById("placesafety").innerHTML = "";
+			document.getElementById("placeinclusivity").innerHTML = "";
+			document.getElementById("placeenjoyability").innerHTML = "";
+			document.getElementById("nonefound").setAttribute("style", "");
+			document.getElementById("leftmore").innerHTML = "Be the first...";
+		}
 		document.getElementById("leftmore").setAttribute("href", "review.html?placeID=" + place.place_id);
 	});
 }
