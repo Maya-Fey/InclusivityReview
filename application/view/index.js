@@ -53,6 +53,7 @@ function onPlaceSelected(lonLat, place)
 	document.getElementById("placesafety").innerHTML = "Safety: " + formatScore(averages.safety);
 	document.getElementById("placeinclusivity").innerHTML = "Inclusivity: " + formatScore(averages.inclusivity);
 	document.getElementById("placeenjoyability").innerHTML = "Enjoyability: " + formatScore(averages.enjoyability);
+	document.getElementById("leftmore").setAttribute("href", "review.html?placeID=" + place.place_id);
 }
 
 function centerOnLocation()
