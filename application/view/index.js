@@ -27,6 +27,7 @@ function onClick(event) {
 function doPlaceReq(lonLat, placeID)
 {
 	req = { "placeId": placeID };
+	console.log(placeID)
 	places.getDetails(req, function(place, status) { 
 		if(status == google.maps.places.PlacesServiceStatus.OK) {
 			onPlaceSelected(lonLat, place);

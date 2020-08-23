@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="review.css" type="text/css">
-<!-- font -->
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="review.js"></script>
 <html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Review</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFSeMVki-HksYGMu0JH0MGC5qEZ7Atn4U&callback=initMap&libraries=places" defer></script>
+        <script src="api.js"></script>
+        <script src="review.js"></script>
+        <link rel="stylesheet" href="review.css" type="text/css">
+        <!-- font -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
     <body>
     <div class="column" id="idColumn">
         <div class="row" id="descriptionRow" style="padding: 5%">
@@ -54,6 +61,8 @@
             <button type="button" id="reviewButton" onclick="reviewOnClick()" class="button">Write a review</button>
             <button type="button" id="reportButton" onclick="reportOnClick()" class="button">Report</button>
         </div>
+    </div>
+    <div id="map">
     </div>
     </body>
 </html>
