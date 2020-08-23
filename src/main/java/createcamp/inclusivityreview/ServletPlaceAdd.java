@@ -17,11 +17,6 @@ public class ServletPlaceAdd extends HttpServlet {
 	private static final long serialVersionUID = -5595471112661348949L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-	{
-		this.doPost(req, resp);
-	}
-	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 	{
 		resp.setHeader("Access-Control-Allow-Origin", "*");
