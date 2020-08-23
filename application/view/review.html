@@ -15,10 +15,10 @@
     </head>
     <body>
     <div class="column" id="idColumn">
-        <div class="row" id="descriptionRow" style="padding: 5%">
+        <div class="row" id="descriptionRow" style="padding: 5%;>
             <button type="button" class="button" onclick="backButtonClick()">Back</button>
             <section>
-                <img id="placeImage" src="placeholder.jpg" height="100%" width="100%">
+                <img id="placeImage" src="placeholder.jpg" height="75%" width="75%">
             </section>
             <label id="placeLabel">Name of Place</label>
         </div>
@@ -29,6 +29,11 @@
                         <label>Inclusivity</label>
                     </section>
                     <section id="inclusivityRating" class="column">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
                     </section>
                 </div>
                 <div class="row">
@@ -36,6 +41,11 @@
                         <label class="row">Enjoyability</label>
                     </section>
                     <section id="enjoyabilityRating" class="column">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
                     </section>
                 </div>
                 <div class="row">
@@ -43,6 +53,11 @@
                         <label class="row">Safety</label>
                     </section>
                     <section id="safetyRating" class="column">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
                     </section>
                 </div>
             </div>
@@ -55,9 +70,21 @@
     </div>
     <div class="column" id="reviewColumn">
         <div class="row" >
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
+            <label style="offset: center">Rate Place</label>
             <p>
-                <textarea style=""></textarea>
+                <label>Inclusivity: </label>
+                <input type="number" id="inclusivityQuantity" name="quantity"  min="0" max="5">
+            </p>
+            <p>
+                <label>Safety: </label>
+                <input type="number" id="safetyQuantity" name="quantity"  min="0" max="5">
+            </p>
+            <p>
+                <label>Enjoyability: </label>
+                <input type="number" id="enjoyabilityQuantity" name="quantity"  min="0" max="5">
+            </p>
+            <p>
+                <textarea id="reviewBox" style="height: 200px; width: 230px"></textarea>
             </p>
         </div>
         <div class="row" style="height: 20%">
@@ -65,7 +92,7 @@
             <button type="button" id="reportButton" onclick="reportOnClick()" class="button">Report</button>
         </div>
     </div>
-    <div id="map">
+    <div id="map" style="size: 0">
     </div>
     </body>
 </html>

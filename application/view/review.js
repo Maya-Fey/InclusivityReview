@@ -1,6 +1,7 @@
 let map;
 let places;
 var currPlace;
+var currPlaceID;
 var aveInclusivity;
 var aveEnjoyability;
 var aveSafety;
@@ -13,28 +14,32 @@ function initMap() {
 		zoom: 16
 	});
 	places = new google.maps.places.PlacesService(map);
-	reviewPlaceReq("ChIJ1S1oBNevOG0RLMhZZpcx46E");
+	reviewPlaceReq(findGetParameter("placeID"));
+
 
 }
 
 function backButtonClick() {
-	alert("Back Button Clicked")
-	// TODO : Return to main screen
-}
-
-function setAverageReviews() {
-	alert("This will be a review")
+	window.location = "index.html"
 }
 
 function reviewOnClick() {
-	console.log(currPlace.name)
+	reviewData = {
+		username: "claire",
+		placeID: currPlaceID,
+		safety: parseFloat(document.getElementById("inclusivityRating").value),
+		inclusivity: parseFloat(document.getElementById("safetyRating").value),
+		enjoyability: parseFloat(document.getElementById("enjoyabilityRating").value),
+		reviewtext: document.getElementById("reviewBox").value
+	};
+	addReview(reviewData)
 }
 
 function reportOnClick() {
 	let reported = confirm("Are You Sure?")
 	console.log(reported)
 	if (reported) {
-		alert("place.name is reported.")
+		alert(currPlace.name + " is reported.");
 	}
 }
 
@@ -57,8 +62,13 @@ function reviewPlaceReq(placeID)
 	places.getDetails(req, function(place, status) {
 		if(status == google.maps.places.PlacesServiceStatus.OK) {
 			currPlace = place;
+			currPlaceID = placeID;
+			photo = place.photos;
+			console.log(photo)
 			document.getElementById("placeLabel").innerHTML = place.name;
-			reviews = getReviewsByPlace(placeID).then(function(vals) {});
+			document.getElementById("placeImage").src = photo[0].getUrl();
+			reviews = getReviewsByPlace(placeID).then(function(vals) {
+			});
 			// FIXME Get actual reviews
 			// showReviewRatings(getAverages(reviews));
 			showReviewRatings({
@@ -67,6 +77,8 @@ function reviewPlaceReq(placeID)
 				"enjoyability": 2.0 });
 		}
 	});
+
+
 }
 
 function showReviewRatings(aveReviews) {
@@ -76,4 +88,3 @@ function showReviewRatings(aveReviews) {
 	document.getElementById("inclusivityRating").innerHTML;
 }
 
-// doPlaceReq(findGetParameter(placeID))
