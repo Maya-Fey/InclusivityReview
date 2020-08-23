@@ -12,10 +12,8 @@ public class Data {
 	public Data() {
 		List<String> tags = new ArrayList<String>();
 		tags.add("Queer");
-		users.put("alice", new User("alice", "Alice Anderson", tags));
+		users.put("Alice", new User("alice", "Alice Anderson", tags));
 		
-		tags.add("Teenager");
-		users.put("bob", new User("bob", "Bob Gibson", tags));
 		
 		
 		
