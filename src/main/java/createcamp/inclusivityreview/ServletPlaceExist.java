@@ -19,11 +19,25 @@ public class ServletPlaceExist extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	{
 		resp.setHeader("Access-Control-Allow-Origin", "*");
+		
+		//get java object storing data required
+		
 		String reqPlaceID = req.getParameter("placeID");
 		
-		boolean exist = Data.places.containsKey(reqPlaceID);
+		//Place place = new Place("1111", "Home", 0.82, 90.2);
+		
+		
+		
+		boolean exist = false;
+  
+
+		//add Java object data into json
 		JSONObject obj = new JSONObject();
 		obj.put("exist", exist);
+		/*
+		obj.put("placeID", place.placeID);
+		obj.put("name", place.name);
+		*/
 		
 		try(PrintWriter writer = resp.getWriter()) {
 			
@@ -34,4 +48,9 @@ public class ServletPlaceExist extends HttpServlet {
 		resp.setStatus(HttpServletResponse.SC_OK);
 	}
 	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	{
+		//req.getParameter("myparam")
+	}
 }
