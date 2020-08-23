@@ -31,5 +31,14 @@
         <servlet-name>ServGetReviews</servlet-name>
         <url-pattern>/review</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServAddReview</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletAddReview</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServAddReview</servlet-name>
+        <url-pattern>/addreview</url-pattern>
+    </servlet-mapping>
 
 </web-app>
