@@ -29,11 +29,14 @@ public class ServletUser extends HttpServlet {
 		
 		User result = new Data().users.get(reqUserID);
 		
-  
 
 		//add Java object data into json
 		JSONObject obj = new JSONObject();
-		obj.put("exist", result.username);
+		if(result != null) {
+			obj.put("username", result.username);
+			obj.put("full name", result.fullName);
+			obj.put("tags", result.tags);
+		}
 		/*
 		obj.put("placeID", place.placeID);
 		obj.put("name", place.name);
