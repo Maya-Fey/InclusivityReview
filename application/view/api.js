@@ -16,7 +16,5 @@ placeexample = {
 userexample = {
 	username: "claire",
 	fullname: "Claire Chambers",
-	tags = [
-		"trans", "female", "queer"
-	];
+	tags = ["trans", "female", "queer"];
 };
