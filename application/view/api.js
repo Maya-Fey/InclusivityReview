@@ -1,6 +1,6 @@
 reviewexample = {
 	username: "claire",
-	placeID: "",
+	placeID: "ChIJ90utGdevOG0Rhmjc02ajcJo",
 	safety: 4.0,
 	inclusivity: 4.0,
 	enjoyability: 4.0,
@@ -24,23 +24,28 @@ userexample = {
 
 function placeExists(placeID)
 {
-	//TODO: Put things here
-	return { exist: false};
+	return getFromServer("http://127.0.0.1:8080/exist?placeID=" + placeID);
 }
 
 function addPlace(place)
 {
-	//Write to place
+	fetch("http://127.0.0.1:8080/addplace", {
+		method: "POST",
+		body: JSON.stringify(place)
+	}).then(function(res) { res.json(); });
 }
 
 function getReviewsByPlace(placeId)
 {
-	//TODO: do read
-	return [
-		reviewexample,
-		reviewexample,
-		reviewexample
-	];
+	return getFromServer("http://127.0.0.1:8080/review?placeID=" + placeID);
+}
+
+function addReview(review)
+{
+	fetch("http://127.0.0.1:8080/addreview", {
+		method: "POST",
+		body: JSON.stringify(review)
+	}).then(function(res) { res.json(); });
 }
 
 function getUserByUsername(username)

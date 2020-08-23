@@ -1,5 +1,6 @@
 package createcamp.inclusivityreview;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -9,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
-public class TestServlet extends HttpServlet {
+
+public class ServletPlaceExist extends HttpServlet {
 	
 	private static final long serialVersionUID = -5595471112661348949L;
 
@@ -17,9 +19,14 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	{
 		resp.setHeader("Access-Control-Allow-Origin", "*");
-		//req.getParameter("myparam")
+		String reqPlaceID = req.getParameter("placeID");
+		
+		boolean exist = Data.places.containsKey(reqPlaceID);
 		JSONObject obj = new JSONObject();
+		obj.put("exist", exist);
+		
 		try(PrintWriter writer = resp.getWriter()) {
+			
 			writer.write(obj.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -27,9 +34,4 @@ public class TestServlet extends HttpServlet {
 		resp.setStatus(HttpServletResponse.SC_OK);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-	{
-		//req.getParameter("myparam")
-	}
 }
