@@ -35,7 +35,7 @@ function addPlace(place)
 	}).then(function(res) { res.json(); });
 }
 
-function getReviewsByPlace(placeId)
+function getReviewsByPlace(placeID)
 {
 	return getFromServer("http://127.0.0.1:8080/review?placeID=" + placeID);
 }
