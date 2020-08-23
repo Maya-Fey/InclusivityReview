@@ -2,17 +2,7 @@
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-   
-   <servlet>
-        <servlet-name>ServTest</servlet-name>
-        <servlet-class>createcamp.inclusivityreview.TestServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServTest</servlet-name>
-        <url-pattern>/test</url-pattern>
-    </servlet-mapping>
-    
+   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">    
     
     <servlet>
         <servlet-name>ServPlaceExist</servlet-name>
@@ -25,22 +15,30 @@
     
     
     <servlet>
-        <servlet-name>ServPlaceReview</servlet-name>
-        <servlet-class>createcamp.inclusivityreview.ServletPlaceReview</servlet-class>
+        <servlet-name>ServPlaceAdd</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletPlaceAdd</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ServPlaceReview</servlet-name>
+        <servlet-name>ServPlaceAdd</servlet-name>
+        <url-pattern>/addplace</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServGetReviews</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletGetReviews</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServGetReviews</servlet-name>
         <url-pattern>/review</url-pattern>
     </servlet-mapping>
     
-    
     <servlet>
-        <servlet-name>ServUser</servlet-name>
-        <servlet-class>createcamp.inclusivityreview.ServletUser</servlet-class>
+        <servlet-name>ServAddReview</servlet-name>
+        <servlet-class>createcamp.inclusivityreview.ServletAddReview</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ServUser</servlet-name>
-        <url-pattern>/user</url-pattern>
+        <servlet-name>ServAddReview</servlet-name>
+        <url-pattern>/addreview</url-pattern>
     </servlet-mapping>
 
 </web-app>
