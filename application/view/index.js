@@ -40,12 +40,18 @@ function onPlaceSelected(lonLat, place)
 	document.getElementById("leftinner").setAttribute("style", "");
 	document.getElementById("leftmore").setAttribute("style", "");
 	document.getElementById("placetitle").innerHTML = place.name;
+	document.getElementById("placetype").innerHTML = place.types[0].substring(0, 1).toUpperCase() + place.types[0].substring(1);
 	reviews = document.getElementsByClassName("review");
 	while(reviews.length > 0)
 		document.getElementById("leftinner").removeChild(reviews[0]);
 	reviews = getReviewsByPlace(place.place_id);
 	for(let i = 0; i < reviews.length && i < 2; i++)
 		newReview(reviews[i]);
+	
+	let averages = getAverages(reviews);
+	document.getElementById("placesafety").innerHTML = "Safety: " + formatScore(averages.safety);
+	document.getElementById("placeinclusivity").innerHTML = "Inclusivity: " + formatScore(averages.inclusivity);
+	document.getElementById("placeenjoyability").innerHTML = "Enjoyability: " + formatScore(averages.enjoyability);
 }
 
 function centerOnLocation()
@@ -126,4 +132,18 @@ function newReview(review)
 	rev.appendChild(enjoyability);
 	rev.appendChild(text);
 	document.getElementById("leftinner").appendChild(rev);
+}
+
+function formatScore(score)
+{
+	if(score < 1.15) 
+		return "Abysmal (" + score + ")"; 
+	else if(score < 2.25)
+		return "Poor (" + score + ")";
+	else if(score < 3)
+		return "Medicore (" + score + ")";
+	else if(score < 4)
+		return "Good (" + score + ")";
+	else
+		return "Excellent (" + score + ")";
 }

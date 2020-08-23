@@ -70,3 +70,17 @@ body {
 	width: 70%;
 	height: 70%;
 }
+
+/* Left */
+
+#placetitle {
+	margin: 0;
+}
+
+#placetype {
+	margin-top: 0;
+}
+
+#placesafety, #placeinclusivity, #placeenjoyability {
+	margin: 0
+}
