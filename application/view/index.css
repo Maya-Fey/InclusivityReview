@@ -84,3 +84,7 @@ body {
 #placesafety, #placeinclusivity, #placeenjoyability {
 	margin: 0
 }
+
+.score {
+	margin-right: 1em;
+}
