@@ -23,7 +23,7 @@ public class ServletGetReviews extends HttpServlet {
 		resp.setHeader("Access-Control-Allow-Origin", "*");
 		String reqPlaceID = req.getParameter("placeID");
 		
-		List<Review> reviews = Data.reviews.get(reqPlaceID);
+		List<Review> reviews = Data.getReviews(reqPlaceID);
 		JSONArray array = new JSONArray();
 		for(Review review : reviews) {
 			JSONObject obj = new JSONObject();
