@@ -127,6 +127,16 @@ function newReview(review)
 	let title = document.createElement("h4");
 	title.setAttribute("class", "reviewtitle");
 	title.innerHTML = "Review by " + review.username;
+	let tagdiv = document.createElement("div");
+	tagdiv.setAttribute("class", "tagdiv");
+	getUser(review.username).then(function(userdata) {
+		userdata.tags.forEach(function(tag) {
+			let tagSpan = document.createElement("span");
+			tagSpan.setAttribute("class", "tagspan");
+			tagSpan.innerHTML = tag;
+			tagdiv.appendChild(tagSpan);
+		})
+	});
 	let safety = document.createElement("span");
 	safety.setAttribute("class", "score");
 	safety.innerHTML = "Safety: " + review.safety;
@@ -140,6 +150,7 @@ function newReview(review)
 	text.setAttribute("class", "reviewtext");
 	text.innerHTML = review.reviewtext;
 	rev.appendChild(title);
+	rev.appendChild(tagdiv);
 	rev.appendChild(safety);
 	rev.appendChild(inclusivity);
 	rev.appendChild(enjoyability);

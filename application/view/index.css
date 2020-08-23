@@ -89,3 +89,18 @@ body {
 .score {
 	margin-right: 1em;
 }
+
+.reviewtitle {
+	margin-bottom: 0.4em;
+}
+
+.tagdiv {
+	margin-bottom: 1em;
+}
+
+.tagspan {
+	background-color: lightblue;
+	border: 0.4em lightblue solid;
+	border-radius: 0.4em;
+	margin-right: 0.5em;
+}
