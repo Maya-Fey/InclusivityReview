@@ -54,3 +54,24 @@ async function getFromServer(url) {
     return res;
   } catch(e) { console.log(e); }
 }
+
+function getAverages(reviews)
+{
+	let safety = 0.0;
+	let inclusivity = 0.0;
+	let enjoyability = 0.0;
+	for(let i = 0; i < reviews.length; i++)
+	{
+		safety += reviews[i].safety;
+		inclusivity += reviews[i].inclusivity;
+		enjoyability += reviews[i].enjoyability;
+	}
+	safety /= reviews.length;
+	inclusivity /= reviews.length;
+	enjoyability /= reviews.length;
+	return {
+		"safety": safety,
+		"inclusivity": inclusivity,
+		"enjoyability": enjoyability
+	};
+}
