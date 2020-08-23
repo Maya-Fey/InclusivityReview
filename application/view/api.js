@@ -24,12 +24,12 @@ userexample = {
 
 function placeExists(placeID)
 {
-	return getFromServer("http://127.0.0.1:8080/exist?placeID=" + placeID);
+	return getFromServer("http://claire.lgbt:8080/exist?placeID=" + placeID);
 }
 
 function addPlace(place)
 {
-	fetch("http://127.0.0.1:8080/addplace", {
+	fetch("http://claire.lgbt:8080/addplace", {
 		method: "POST",
 		body: JSON.stringify(place)
 	}).then(function(res) { res.json(); });
@@ -37,12 +37,12 @@ function addPlace(place)
 
 function getReviewsByPlace(placeID)
 {
-	return getFromServer("http://127.0.0.1:8080/review?placeID=" + placeID);
+	return getFromServer("http://claire.lgbt:8080/review?placeID=" + placeID);
 }
 
 function addReview(review)
 {
-	fetch("http://127.0.0.1:8080/addreview", {
+	fetch("http://claire.lgbt:8080/addreview", {
 		method: "POST",
 		body: JSON.stringify(review)
 	}).then(function(res) { res.json(); });
